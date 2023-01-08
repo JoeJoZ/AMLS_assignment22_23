@@ -1,0 +1,1 @@
+outputs/12-15-A1-lr0.001-bs32/model_final_029-004710-Acc0.9720.pth

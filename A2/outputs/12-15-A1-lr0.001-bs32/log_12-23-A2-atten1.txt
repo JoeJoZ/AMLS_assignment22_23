@@ -1,0 +1,4 @@
+12-23 15:37 12-23-A2-atten1 INFO: ========> inference main eval...
+========> this program info
+12-23 15:37 12-23-A2-atten1 INFO: use gpu
+12-23 15:37 12-23-A2-atten1 INFO: No checkpoint found.

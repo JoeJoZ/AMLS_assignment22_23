@@ -1,0 +1,6 @@
+12-23 15:40 test INFO: ========> inference main eval...
+========> this program info
+12-23 15:40 test INFO: use gpu
+12-23 15:40 test INFO: Loading checkpoint from outputs/12-23-A2-atten1-lr0.001-bs32/model_final_029-004710-Acc0.9230.pth
+12-23 15:40 test INFO: ===> Evaluating test dataset: n1000
+12-23 15:43 test INFO: acc: 0.9230	auc: 0.9680

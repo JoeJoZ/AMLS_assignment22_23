@@ -1,0 +1,738 @@
+12-15 17:17 12-15-A1 INFO: ========> this program info
+12-15 17:17 12-15-A1 INFO: Using CUDA device0 _CudaDeviceProperties(name='GeForce RTX 2080 Ti', total_memory=11016MB)
+12-15 17:18 12-15-A1 INFO: ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=512, out_features=2, bias=True)
+)
+12-15 17:18 12-15-A1 INFO: No checkpoint found.
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:0/156	loss:0.599242	lr:0.001
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:10/156	loss:0.491193	lr:0.000999989
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:20/156	loss:0.541893	lr:0.000999955
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:30/156	loss:0.376538	lr:0.000999899
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:40/156	loss:0.299588	lr:0.00099982
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:50/156	loss:0.12564	lr:0.000999719
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:60/156	loss:0.150167	lr:0.000999595
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:70/156	loss:0.151988	lr:0.000999449
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:80/156	loss:0.155241	lr:0.00099928
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:90/156	loss:0.36275	lr:0.000999089
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:100/156	loss:0.117117	lr:0.000998875
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:110/156	loss:0.0858685	lr:0.000998639
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:120/156	loss:0.069804	lr:0.00099838
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:130/156	loss:0.107937	lr:0.000998099
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:140/156	loss:0.219001	lr:0.000997796
+12-15 17:18 12-15-A1 INFO: epoch:0/30	itr:150/156	loss:0.279612	lr:0.00099747
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:0/156	loss:0.0984783	lr:0.000997229
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:10/156	loss:0.0377166	lr:0.000996865
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:20/156	loss:0.0741581	lr:0.000996478
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:30/156	loss:0.310517	lr:0.00099607
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:40/156	loss:0.0521718	lr:0.000995639
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:50/156	loss:0.134341	lr:0.000995185
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:60/156	loss:0.0160579	lr:0.00099471
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:70/156	loss:0.0651214	lr:0.000994212
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:80/156	loss:0.228614	lr:0.000993692
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:90/156	loss:0.442912	lr:0.00099315
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:100/156	loss:0.13389	lr:0.000992585
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:110/156	loss:0.0241686	lr:0.000991998
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:120/156	loss:0.0668934	lr:0.00099139
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:130/156	loss:0.0654695	lr:0.000990759
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:140/156	loss:0.0945723	lr:0.000990106
+12-15 17:18 12-15-A1 INFO: epoch:1/30	itr:150/156	loss:0.0316634	lr:0.000989431
+12-15 17:18 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:19 12-15-A1 INFO: acc: 0.9666	auc: 0.9979
+12-15 17:19 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:19 12-15-A1 INFO: acc: 0.9550	auc: 0.9941
+12-15 17:19 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_001-000314-Acc0.9550.pth
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:0/156	loss:0.0426753	lr:0.000988945
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:10/156	loss:0.0355721	lr:0.000988232
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:20/156	loss:0.147239	lr:0.000987498
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:30/156	loss:0.015329	lr:0.000986741
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:40/156	loss:0.0976126	lr:0.000985963
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:50/156	loss:0.130548	lr:0.000985163
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:60/156	loss:0.166603	lr:0.000984341
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:70/156	loss:0.0937313	lr:0.000983497
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:80/156	loss:0.035613	lr:0.000982631
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:90/156	loss:0.00966004	lr:0.000981744
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:100/156	loss:0.0883105	lr:0.000980835
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:110/156	loss:0.151794	lr:0.000979904
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:120/156	loss:0.0458126	lr:0.000978952
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:130/156	loss:0.0681961	lr:0.000977978
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:140/156	loss:0.016952	lr:0.000976982
+12-15 17:19 12-15-A1 INFO: epoch:2/30	itr:150/156	loss:0.014348	lr:0.000975965
+12-15 17:19 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:19 12-15-A1 INFO: acc: 0.9202	auc: 0.9977
+12-15 17:19 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:19 12-15-A1 INFO: acc: 0.8910	auc: 0.9925
+12-15 17:19 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_002-000471-Acc0.8910.pth
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:0/156	loss:0.0920788	lr:0.000975241
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:10/156	loss:0.0375394	lr:0.000974188
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:20/156	loss:0.0378087	lr:0.000973113
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:30/156	loss:0.0415788	lr:0.000972017
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:40/156	loss:0.0479896	lr:0.0009709
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:50/156	loss:0.0511618	lr:0.000969762
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:60/156	loss:0.0175146	lr:0.000968602
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:70/156	loss:0.0177857	lr:0.000967422
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:80/156	loss:0.0229031	lr:0.00096622
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:90/156	loss:0.0456789	lr:0.000964997
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:100/156	loss:0.186779	lr:0.000963754
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:110/156	loss:0.0430287	lr:0.000962489
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:120/156	loss:0.032939	lr:0.000961204
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:130/156	loss:0.0779479	lr:0.000959898
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:140/156	loss:0.0582652	lr:0.000958572
+12-15 17:20 12-15-A1 INFO: epoch:3/30	itr:150/156	loss:0.0382779	lr:0.000957224
+12-15 17:20 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:20 12-15-A1 INFO: acc: 0.9660	auc: 0.9974
+12-15 17:20 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:20 12-15-A1 INFO: acc: 0.9420	auc: 0.9887
+12-15 17:20 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_003-000628-Acc0.9420.pth
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:0/156	loss:0.0239276	lr:0.000956269
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:10/156	loss:0.00899171	lr:0.000954887
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:20/156	loss:0.0186058	lr:0.000953484
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:30/156	loss:0.0725445	lr:0.000952061
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:40/156	loss:0.0293803	lr:0.000950617
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:50/156	loss:0.0147802	lr:0.000949153
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:60/156	loss:0.12216	lr:0.000947669
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:70/156	loss:0.042888	lr:0.000946165
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:80/156	loss:0.00527368	lr:0.000944641
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:90/156	loss:0.00295134	lr:0.000943097
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:100/156	loss:0.032203	lr:0.000941532
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:110/156	loss:0.0126967	lr:0.000939948
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:120/156	loss:0.178774	lr:0.000938344
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:130/156	loss:0.00785932	lr:0.000936721
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:140/156	loss:0.00554045	lr:0.000935077
+12-15 17:20 12-15-A1 INFO: epoch:4/30	itr:150/156	loss:0.00103673	lr:0.000933415
+12-15 17:20 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:21 12-15-A1 INFO: acc: 0.8682	auc: 0.9966
+12-15 17:21 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:21 12-15-A1 INFO: acc: 0.8400	auc: 0.9914
+12-15 17:21 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_004-000785-Acc0.8400.pth
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:0/156	loss:0.0874024	lr:0.000932239
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:10/156	loss:0.0412099	lr:0.000930543
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:20/156	loss:0.00491302	lr:0.000928828
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:30/156	loss:0.0102926	lr:0.000927093
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:40/156	loss:0.0179261	lr:0.000925339
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:50/156	loss:0.00612318	lr:0.000923566
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:60/156	loss:0.040916	lr:0.000921774
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:70/156	loss:0.0318462	lr:0.000919963
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:80/156	loss:0.0107721	lr:0.000918133
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:90/156	loss:0.0206717	lr:0.000916284
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:100/156	loss:0.0121179	lr:0.000914417
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:110/156	loss:0.21021	lr:0.00091253
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:120/156	loss:0.00249069	lr:0.000910626
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:130/156	loss:0.0108714	lr:0.000908703
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:140/156	loss:0.0339497	lr:0.000906761
+12-15 17:21 12-15-A1 INFO: epoch:5/30	itr:150/156	loss:0.0984149	lr:0.000904801
+12-15 17:21 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:21 12-15-A1 INFO: acc: 0.9926	auc: 0.9997
+12-15 17:21 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:22 12-15-A1 INFO: acc: 0.9610	auc: 0.9930
+12-15 17:22 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_005-000942-Acc0.9610.pth
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:0/156	loss:0.00823158	lr:0.000903418
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:10/156	loss:0.0780345	lr:0.000901427
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:20/156	loss:0.118536	lr:0.000899418
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:30/156	loss:0.0193338	lr:0.000897392
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:40/156	loss:0.000888632	lr:0.000895347
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:50/156	loss:0.000918731	lr:0.000893284
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:60/156	loss:0.0678745	lr:0.000891204
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:70/156	loss:0.317063	lr:0.000889106
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:80/156	loss:0.00253899	lr:0.000886991
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:90/156	loss:0.0156719	lr:0.000884858
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:100/156	loss:0.165632	lr:0.000882708
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:110/156	loss:0.0439487	lr:0.00088054
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:120/156	loss:0.0273874	lr:0.000878356
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:130/156	loss:0.0113673	lr:0.000876155
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:140/156	loss:0.00270721	lr:0.000873936
+12-15 17:22 12-15-A1 INFO: epoch:6/30	itr:150/156	loss:0.179023	lr:0.000871701
+12-15 17:22 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:22 12-15-A1 INFO: acc: 0.9928	auc: 1.0000
+12-15 17:22 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:22 12-15-A1 INFO: acc: 0.9600	auc: 0.9946
+12-15 17:22 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_006-001099-Acc0.9600.pth
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:0/156	loss:0.0504671	lr:0.000870126
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:10/156	loss:0.00680255	lr:0.000867863
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:20/156	loss:0.0109179	lr:0.000865582
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:30/156	loss:0.0024196	lr:0.000863286
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:40/156	loss:0.0139923	lr:0.000860973
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:50/156	loss:0.00154063	lr:0.000858644
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:60/156	loss:0.0963206	lr:0.000856298
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:70/156	loss:0.00049285	lr:0.000853937
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:80/156	loss:0.00036564	lr:0.00085156
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:90/156	loss:0.00226425	lr:0.000849166
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:100/156	loss:0.0240347	lr:0.000846758
+12-15 17:22 12-15-A1 INFO: epoch:7/30	itr:110/156	loss:0.00125253	lr:0.000844333
+12-15 17:23 12-15-A1 INFO: epoch:7/30	itr:120/156	loss:0.0782249	lr:0.000841893
+12-15 17:23 12-15-A1 INFO: epoch:7/30	itr:130/156	loss:0.000946813	lr:0.000839438
+12-15 17:23 12-15-A1 INFO: epoch:7/30	itr:140/156	loss:0.125193	lr:0.000836967
+12-15 17:23 12-15-A1 INFO: epoch:7/30	itr:150/156	loss:0.0116769	lr:0.000834481
+12-15 17:23 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:23 12-15-A1 INFO: acc: 0.9948	auc: 0.9999
+12-15 17:23 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:23 12-15-A1 INFO: acc: 0.9690	auc: 0.9961
+12-15 17:23 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_007-001256-Acc0.9690.pth
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:0/156	loss:0.013245	lr:0.000832732
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:10/156	loss:0.00367307	lr:0.000830221
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:20/156	loss:0.0291987	lr:0.000827695
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:30/156	loss:0.0308358	lr:0.000825154
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:40/156	loss:0.00244302	lr:0.000822599
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:50/156	loss:0.0521148	lr:0.000820029
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:60/156	loss:0.0126147	lr:0.000817444
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:70/156	loss:0.0235585	lr:0.000814846
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:80/156	loss:0.0374198	lr:0.000812233
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:90/156	loss:0.0263016	lr:0.000809606
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:100/156	loss:0.00197888	lr:0.000806965
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:110/156	loss:0.00221446	lr:0.00080431
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:120/156	loss:0.00825445	lr:0.000801642
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:130/156	loss:0.0215199	lr:0.00079896
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:140/156	loss:0.0589532	lr:0.000796265
+12-15 17:23 12-15-A1 INFO: epoch:8/30	itr:150/156	loss:0.0328483	lr:0.000793556
+12-15 17:23 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:23 12-15-A1 INFO: acc: 0.9940	auc: 0.9999
+12-15 17:23 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:24 12-15-A1 INFO: acc: 0.9670	auc: 0.9932
+12-15 17:24 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_008-001413-Acc0.9670.pth
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:0/156	loss:0.00592388	lr:0.000791652
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:10/156	loss:0.00157026	lr:0.000788921
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:20/156	loss:0.0221687	lr:0.000786177
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:30/156	loss:0.00268401	lr:0.00078342
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:40/156	loss:0.00188533	lr:0.00078065
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:50/156	loss:0.00339749	lr:0.000777868
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:60/156	loss:0.00840007	lr:0.000775073
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:70/156	loss:0.0369417	lr:0.000772266
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:80/156	loss:0.00143316	lr:0.000769446
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:90/156	loss:0.0251311	lr:0.000766615
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:100/156	loss:0.0472307	lr:0.000763771
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:110/156	loss:0.00356754	lr:0.000760916
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:120/156	loss:0.00823171	lr:0.000758049
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:130/156	loss:0.0019031	lr:0.00075517
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:140/156	loss:0.0112658	lr:0.00075228
+12-15 17:24 12-15-A1 INFO: epoch:9/30	itr:150/156	loss:0.015828	lr:0.000749378
+12-15 17:24 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:24 12-15-A1 INFO: acc: 0.9930	auc: 1.0000
+12-15 17:24 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:24 12-15-A1 INFO: acc: 0.9590	auc: 0.9945
+12-15 17:24 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_009-001570-Acc0.9590.pth
+12-15 17:24 12-15-A1 INFO: epoch:10/30	itr:0/156	loss:0.0854199	lr:0.000747341
+12-15 17:24 12-15-A1 INFO: epoch:10/30	itr:10/156	loss:0.000596033	lr:0.00074442
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:20/156	loss:0.0069858	lr:0.000741488
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:30/156	loss:0.00080146	lr:0.000738546
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:40/156	loss:0.000455786	lr:0.000735593
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:50/156	loss:0.000283151	lr:0.000732629
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:60/156	loss:0.000360897	lr:0.000729655
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:70/156	loss:5.66034e-05	lr:0.000726671
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:80/156	loss:4.64771e-05	lr:0.000723676
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:90/156	loss:0.00213397	lr:0.000720671
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:100/156	loss:0.00599493	lr:0.000717656
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:110/156	loss:0.00293437	lr:0.000714632
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:120/156	loss:0.00827682	lr:0.000711598
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:130/156	loss:0.0381699	lr:0.000708554
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:140/156	loss:0.00325946	lr:0.000705501
+12-15 17:25 12-15-A1 INFO: epoch:10/30	itr:150/156	loss:0.0518822	lr:0.000702439
+12-15 17:25 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:25 12-15-A1 INFO: acc: 0.9982	auc: 1.0000
+12-15 17:25 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:25 12-15-A1 INFO: acc: 0.9700	auc: 0.9962
+12-15 17:25 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_010-001727-Acc0.9700.pth
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:0/156	loss:0.00290772	lr:0.00070029
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:10/156	loss:0.00190773	lr:0.000697212
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:20/156	loss:0.00212547	lr:0.000694126
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:30/156	loss:0.00321111	lr:0.000691031
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:40/156	loss:0.00195378	lr:0.000687927
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:50/156	loss:0.00217893	lr:0.000684815
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:60/156	loss:0.000736747	lr:0.000681694
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:70/156	loss:0.000616322	lr:0.000678565
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:80/156	loss:0.000142512	lr:0.000675429
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:90/156	loss:0.00394653	lr:0.000672284
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:100/156	loss:0.00100396	lr:0.000669132
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:110/156	loss:0.000179847	lr:0.000665972
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:120/156	loss:0.000188689	lr:0.000662804
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:130/156	loss:3.99352e-05	lr:0.000659629
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:140/156	loss:0.000101024	lr:0.000656448
+12-15 17:25 12-15-A1 INFO: epoch:11/30	itr:150/156	loss:0.04366	lr:0.000653259
+12-15 17:25 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:26 12-15-A1 INFO: acc: 0.9998	auc: 1.0000
+12-15 17:26 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:26 12-15-A1 INFO: acc: 0.9750	auc: 0.9961
+12-15 17:26 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_011-001884-Acc0.9750.pth
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:0/156	loss:7.70752e-05	lr:0.000651022
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:10/156	loss:0.00059932	lr:0.000647822
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:20/156	loss:2.3542e-05	lr:0.000644615
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:30/156	loss:0.00262634	lr:0.000641401
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:40/156	loss:0.00589891	lr:0.000638181
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:50/156	loss:0.000494487	lr:0.000634955
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:60/156	loss:0.151022	lr:0.000631722
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:70/156	loss:0.0277171	lr:0.000628484
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:80/156	loss:0.0102965	lr:0.00062524
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:90/156	loss:0.000689327	lr:0.000621991
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:100/156	loss:0.000234753	lr:0.000618735
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:110/156	loss:0.018909	lr:0.000615475
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:120/156	loss:0.000352956	lr:0.00061221
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:130/156	loss:0.000309319	lr:0.000608939
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:140/156	loss:0.000423132	lr:0.000605663
+12-15 17:26 12-15-A1 INFO: epoch:12/30	itr:150/156	loss:0.000206714	lr:0.000602383
+12-15 17:26 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:26 12-15-A1 INFO: acc: 0.9972	auc: 1.0000
+12-15 17:26 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:26 12-15-A1 INFO: acc: 0.9650	auc: 0.9953
+12-15 17:26 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_012-002041-Acc0.9650.pth
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:0/156	loss:0.0584389	lr:0.000600084
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:10/156	loss:0.000298324	lr:0.000596796
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:20/156	loss:0.0084902	lr:0.000593504
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:30/156	loss:0.00169923	lr:0.000590208
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:40/156	loss:7.88696e-05	lr:0.000586907
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:50/156	loss:0.00521358	lr:0.000583603
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:60/156	loss:4.33244e-06	lr:0.000580294
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:70/156	loss:5.56675e-05	lr:0.000576983
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:80/156	loss:7.17475e-05	lr:0.000573667
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:90/156	loss:0.000449769	lr:0.000570349
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:100/156	loss:1.57796e-05	lr:0.000567027
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:110/156	loss:0.000109525	lr:0.000563703
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:120/156	loss:9.26003e-05	lr:0.000560375
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:130/156	loss:0.000389962	lr:0.000557045
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:140/156	loss:0.000774282	lr:0.000553712
+12-15 17:27 12-15-A1 INFO: epoch:13/30	itr:150/156	loss:2.06372e-05	lr:0.000550377
+12-15 17:27 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:27 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:27 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:27 12-15-A1 INFO: acc: 0.9730	auc: 0.9966
+12-15 17:27 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_013-002198-Acc0.9730.pth
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:0/156	loss:2.5918e-05	lr:0.000548041
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:10/156	loss:6.8124e-05	lr:0.000544702
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:20/156	loss:2.77895e-05	lr:0.000541361
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:30/156	loss:0.000163584	lr:0.000538019
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:40/156	loss:9.74466e-05	lr:0.000534674
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:50/156	loss:0.000121482	lr:0.000531328
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:60/156	loss:0.000241747	lr:0.000527981
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:70/156	loss:5.96365e-05	lr:0.000524633
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:80/156	loss:0.000166973	lr:0.000521283
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:90/156	loss:0.000115977	lr:0.000517932
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:100/156	loss:9.47031e-05	lr:0.000514581
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:110/156	loss:1.92884e-05	lr:0.000511229
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:120/156	loss:7.52674e-05	lr:0.000507876
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:130/156	loss:1.5962e-05	lr:0.000504524
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:140/156	loss:5.14463e-05	lr:0.000501171
+12-15 17:27 12-15-A1 INFO: epoch:14/30	itr:150/156	loss:1.7049e-05	lr:0.000497818
+12-15 17:28 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:28 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:28 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:28 12-15-A1 INFO: acc: 0.9740	auc: 0.9966
+12-15 17:28 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_014-002355-Acc0.9740.pth
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:0/156	loss:3.67212e-05	lr:0.000495471
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:10/156	loss:1.66959e-05	lr:0.000492118
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:20/156	loss:0.000119958	lr:0.000488765
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:30/156	loss:6.05705e-05	lr:0.000485414
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:40/156	loss:3.75949e-05	lr:0.000482062
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:50/156	loss:0.00018765	lr:0.000478712
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:60/156	loss:0.000132619	lr:0.000475363
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:70/156	loss:0.0013907	lr:0.000472015
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:80/156	loss:2.91688e-06	lr:0.000468668
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:90/156	loss:5.613e-05	lr:0.000465322
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:100/156	loss:9.30538e-06	lr:0.000461978
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:110/156	loss:7.05527e-05	lr:0.000458636
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:120/156	loss:3.02909e-05	lr:0.000455296
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:130/156	loss:2.85255e-05	lr:0.000451958
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:140/156	loss:1.29368e-05	lr:0.000448622
+12-15 17:28 12-15-A1 INFO: epoch:15/30	itr:150/156	loss:2.54829e-05	lr:0.000445288
+12-15 17:28 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:28 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:28 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:29 12-15-A1 INFO: acc: 0.9740	auc: 0.9967
+12-15 17:29 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_015-002512-Acc0.9740.pth
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:0/156	loss:3.9544e-05	lr:0.000442956
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:10/156	loss:8.13131e-05	lr:0.000439626
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:20/156	loss:1.20843e-05	lr:0.0004363
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:30/156	loss:4.38668e-05	lr:0.000432976
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:40/156	loss:0.000171673	lr:0.000429655
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:50/156	loss:1.16028e-05	lr:0.000426338
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:60/156	loss:1.69836e-05	lr:0.000423023
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:70/156	loss:9.19154e-05	lr:0.000419713
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:80/156	loss:2.46322e-05	lr:0.000416406
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:90/156	loss:4.47435e-05	lr:0.000413102
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:100/156	loss:4.54955e-05	lr:0.000409803
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:110/156	loss:6.5161e-05	lr:0.000406508
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:120/156	loss:1.73401e-05	lr:0.000403217
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:130/156	loss:1.91168e-05	lr:0.00039993
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:140/156	loss:4.26089e-05	lr:0.000396648
+12-15 17:29 12-15-A1 INFO: epoch:16/30	itr:150/156	loss:7.49543e-05	lr:0.000393371
+12-15 17:29 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:29 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:29 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:29 12-15-A1 INFO: acc: 0.9740	auc: 0.9967
+12-15 17:29 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_016-002669-Acc0.9740.pth
+12-15 17:29 12-15-A1 INFO: epoch:17/30	itr:0/156	loss:1.06834e-05	lr:0.000391079
+12-15 17:29 12-15-A1 INFO: epoch:17/30	itr:10/156	loss:0.000135212	lr:0.00038781
+12-15 17:29 12-15-A1 INFO: epoch:17/30	itr:20/156	loss:1.74387e-05	lr:0.000384546
+12-15 17:29 12-15-A1 INFO: epoch:17/30	itr:30/156	loss:1.44188e-05	lr:0.000381287
+12-15 17:29 12-15-A1 INFO: epoch:17/30	itr:40/156	loss:1.08067e-05	lr:0.000378034
+12-15 17:29 12-15-A1 INFO: epoch:17/30	itr:50/156	loss:1.21067e-05	lr:0.000374786
+12-15 17:29 12-15-A1 INFO: epoch:17/30	itr:60/156	loss:8.69076e-06	lr:0.000371544
+12-15 17:29 12-15-A1 INFO: epoch:17/30	itr:70/156	loss:1.36961e-05	lr:0.000368307
+12-15 17:29 12-15-A1 INFO: epoch:17/30	itr:80/156	loss:4.42439e-05	lr:0.000365077
+12-15 17:30 12-15-A1 INFO: epoch:17/30	itr:90/156	loss:1.63039e-05	lr:0.000361852
+12-15 17:30 12-15-A1 INFO: epoch:17/30	itr:100/156	loss:1.51573e-05	lr:0.000358634
+12-15 17:30 12-15-A1 INFO: epoch:17/30	itr:110/156	loss:4.31741e-05	lr:0.000355423
+12-15 17:30 12-15-A1 INFO: epoch:17/30	itr:120/156	loss:1.88126e-06	lr:0.000352217
+12-15 17:30 12-15-A1 INFO: epoch:17/30	itr:130/156	loss:7.43548e-06	lr:0.000349019
+12-15 17:30 12-15-A1 INFO: epoch:17/30	itr:140/156	loss:1.09768e-05	lr:0.000345827
+12-15 17:30 12-15-A1 INFO: epoch:17/30	itr:150/156	loss:1.3156e-05	lr:0.000342642
+12-15 17:30 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:30 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:30 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:30 12-15-A1 INFO: acc: 0.9730	auc: 0.9969
+12-15 17:30 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_017-002826-Acc0.9730.pth
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:0/156	loss:1.505e-06	lr:0.000340417
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:10/156	loss:1.79152e-05	lr:0.000337245
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:20/156	loss:3.16876e-05	lr:0.00033408
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:30/156	loss:1.67637e-06	lr:0.000330922
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:40/156	loss:6.18807e-05	lr:0.000327772
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:50/156	loss:9.35251e-05	lr:0.00032463
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:60/156	loss:5.02159e-06	lr:0.000321495
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:70/156	loss:4.83517e-06	lr:0.000318369
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:80/156	loss:4.82785e-06	lr:0.000315251
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:90/156	loss:3.89645e-05	lr:0.000312141
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:100/156	loss:4.02048e-05	lr:0.00030904
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:110/156	loss:4.20206e-06	lr:0.000305947
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:120/156	loss:0.00025301	lr:0.000302863
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:130/156	loss:9.19715e-06	lr:0.000299788
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:140/156	loss:2.24633e-06	lr:0.000296723
+12-15 17:30 12-15-A1 INFO: epoch:18/30	itr:150/156	loss:3.04787e-05	lr:0.000293666
+12-15 17:30 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:31 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:31 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:31 12-15-A1 INFO: acc: 0.9720	auc: 0.9968
+12-15 17:31 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_018-002983-Acc0.9720.pth
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:0/156	loss:9.84181e-06	lr:0.000291532
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:10/156	loss:3.63301e-05	lr:0.000288491
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:20/156	loss:2.00104e-05	lr:0.00028546
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:30/156	loss:7.59195e-06	lr:0.000282438
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:40/156	loss:1.12944e-05	lr:0.000279426
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:50/156	loss:9.76021e-07	lr:0.000276425
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:60/156	loss:4.59197e-05	lr:0.000273433
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:70/156	loss:1.01697e-05	lr:0.000270452
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:80/156	loss:0.000110645	lr:0.000267481
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:90/156	loss:1.32043e-05	lr:0.00026452
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:100/156	loss:4.13498e-06	lr:0.00026157
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:110/156	loss:2.49964e-06	lr:0.000258631
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:120/156	loss:0.000500036	lr:0.000255703
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:130/156	loss:2.42387e-05	lr:0.000252785
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:140/156	loss:2.1806e-05	lr:0.000249879
+12-15 17:31 12-15-A1 INFO: epoch:19/30	itr:150/156	loss:1.46653e-05	lr:0.000246985
+12-15 17:31 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:31 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:31 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:31 12-15-A1 INFO: acc: 0.9730	auc: 0.9969
+12-15 17:31 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_019-003140-Acc0.9730.pth
+12-15 17:31 12-15-A1 INFO: epoch:20/30	itr:0/156	loss:8.21404e-06	lr:0.000244965
+12-15 17:31 12-15-A1 INFO: epoch:20/30	itr:10/156	loss:0.000167983	lr:0.00024209
+12-15 17:31 12-15-A1 INFO: epoch:20/30	itr:20/156	loss:8.00881e-05	lr:0.000239226
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:30/156	loss:1.84165e-05	lr:0.000236374
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:40/156	loss:4.04562e-06	lr:0.000233534
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:50/156	loss:0.000123583	lr:0.000230706
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:60/156	loss:1.13837e-05	lr:0.000227891
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:70/156	loss:8.6493e-06	lr:0.000225087
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:80/156	loss:7.05908e-06	lr:0.000222296
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:90/156	loss:4.03675e-05	lr:0.000219518
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:100/156	loss:6.79766e-05	lr:0.000216752
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:110/156	loss:2.83107e-05	lr:0.000213999
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:120/156	loss:2.82678e-05	lr:0.000211258
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:130/156	loss:5.90809e-06	lr:0.000208531
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:140/156	loss:2.32457e-06	lr:0.000205817
+12-15 17:32 12-15-A1 INFO: epoch:20/30	itr:150/156	loss:2.98037e-05	lr:0.000203117
+12-15 17:32 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:32 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:32 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:32 12-15-A1 INFO: acc: 0.9730	auc: 0.9969
+12-15 17:32 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_020-003297-Acc0.9730.pth
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:0/156	loss:7.15233e-06	lr:0.000201234
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:10/156	loss:5.56921e-06	lr:0.000198556
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:20/156	loss:1.28921e-05	lr:0.000195892
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:30/156	loss:1.7397e-06	lr:0.000193241
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:40/156	loss:6.01983e-06	lr:0.000190605
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:50/156	loss:2.93921e-06	lr:0.000187982
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:60/156	loss:1.4565e-05	lr:0.000185373
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:70/156	loss:5.49838e-06	lr:0.000182779
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:80/156	loss:8.5604e-06	lr:0.000180199
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:90/156	loss:1.61093e-05	lr:0.000177633
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:100/156	loss:1.35227e-06	lr:0.000175082
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:110/156	loss:8.73524e-06	lr:0.000172546
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:120/156	loss:1.35506e-05	lr:0.000170024
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:130/156	loss:2.65545e-05	lr:0.000167517
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:140/156	loss:1.15769e-05	lr:0.000165025
+12-15 17:32 12-15-A1 INFO: epoch:21/30	itr:150/156	loss:8.00507e-06	lr:0.000162549
+12-15 17:32 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:33 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:33 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:33 12-15-A1 INFO: acc: 0.9730	auc: 0.9968
+12-15 17:33 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_021-003454-Acc0.9730.pth
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:0/156	loss:1.69873e-06	lr:0.000160824
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:10/156	loss:4.34363e-06	lr:0.000158373
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:20/156	loss:2.00792e-06	lr:0.000155938
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:30/156	loss:7.80404e-05	lr:0.000153518
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:40/156	loss:1.12423e-05	lr:0.000151114
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:50/156	loss:3.94499e-06	lr:0.000148726
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:60/156	loss:1.89193e-05	lr:0.000146353
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:70/156	loss:3.45698e-06	lr:0.000143996
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:80/156	loss:1.54283e-05	lr:0.000141656
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:90/156	loss:3.43839e-06	lr:0.000139332
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:100/156	loss:1.95237e-05	lr:0.000137024
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:110/156	loss:9.26449e-06	lr:0.000134732
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:120/156	loss:7.3759e-06	lr:0.000132457
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:130/156	loss:5.5056e-06	lr:0.000130198
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:140/156	loss:2.4922e-06	lr:0.000127956
+12-15 17:33 12-15-A1 INFO: epoch:22/30	itr:150/156	loss:6.8317e-06	lr:0.000125731
+12-15 17:33 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:33 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:33 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:33 12-15-A1 INFO: acc: 0.9730	auc: 0.9969
+12-15 17:33 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_022-003611-Acc0.9730.pth
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:0/156	loss:7.56012e-05	lr:0.000124183
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:10/156	loss:2.55178e-06	lr:0.000121987
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:20/156	loss:2.77159e-06	lr:0.000119808
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:30/156	loss:6.27689e-06	lr:0.000117645
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:40/156	loss:1.4282e-05	lr:0.0001155
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:50/156	loss:9.08966e-07	lr:0.000113373
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:60/156	loss:6.92147e-06	lr:0.000111263
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:70/156	loss:5.77029e-06	lr:0.00010917
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:80/156	loss:6.68255e-06	lr:0.000107095
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:90/156	loss:6.7349e-06	lr:0.000105038
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:100/156	loss:9.63829e-05	lr:0.000102999
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:110/156	loss:9.46499e-05	lr:0.000100977
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:120/156	loss:0.000230456	lr:9.89735e-05
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:130/156	loss:4.07851e-05	lr:9.69881e-05
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:140/156	loss:5.37412e-05	lr:9.50209e-05
+12-15 17:34 12-15-A1 INFO: epoch:23/30	itr:150/156	loss:0.000289961	lr:9.30719e-05
+12-15 17:34 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:34 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:34 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:34 12-15-A1 INFO: acc: 0.9730	auc: 0.9969
+12-15 17:34 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_023-003768-Acc0.9730.pth
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:0/156	loss:4.95138e-05	lr:9.17186e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:10/156	loss:3.2211e-05	lr:8.98009e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:20/156	loss:7.98679e-06	lr:8.79017e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:30/156	loss:4.69002e-06	lr:8.60211e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:40/156	loss:3.68195e-05	lr:8.41592e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:50/156	loss:5.34192e-06	lr:8.2316e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:60/156	loss:7.53968e-06	lr:8.04917e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:70/156	loss:6.37451e-05	lr:7.86864e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:80/156	loss:1.06828e-05	lr:7.69e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:90/156	loss:3.10539e-05	lr:7.51327e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:100/156	loss:1.33831e-05	lr:7.33846e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:110/156	loss:5.03728e-05	lr:7.16557e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:120/156	loss:4.11838e-05	lr:6.99462e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:130/156	loss:8.42226e-06	lr:6.8256e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:140/156	loss:1.51074e-05	lr:6.65853e-05
+12-15 17:34 12-15-A1 INFO: epoch:24/30	itr:150/156	loss:4.96946e-06	lr:6.49342e-05
+12-15 17:34 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:35 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:35 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:35 12-15-A1 INFO: acc: 0.9710	auc: 0.9970
+12-15 17:35 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_024-003925-Acc0.9710.pth
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:0/156	loss:6.16503e-06	lr:6.37901e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:10/156	loss:2.08083e-05	lr:6.21724e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:20/156	loss:3.89287e-06	lr:6.05745e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:30/156	loss:1.92224e-06	lr:5.89963e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:40/156	loss:2.5982e-05	lr:5.74381e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:50/156	loss:5.01784e-06	lr:5.58998e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:60/156	loss:3.3192e-06	lr:5.43816e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:70/156	loss:1.1693e-05	lr:5.28834e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:80/156	loss:6.04594e-06	lr:5.14055e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:90/156	loss:8.00162e-06	lr:4.99478e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:100/156	loss:1.44378e-05	lr:4.85103e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:110/156	loss:3.56879e-06	lr:4.70933e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:120/156	loss:2.91315e-06	lr:4.56967e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:130/156	loss:8.47329e-05	lr:4.43205e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:140/156	loss:7.197e-06	lr:4.2965e-05
+12-15 17:35 12-15-A1 INFO: epoch:25/30	itr:150/156	loss:1.0255e-05	lr:4.163e-05
+12-15 17:35 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:35 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:35 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:36 12-15-A1 INFO: acc: 0.9720	auc: 0.9969
+12-15 17:36 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_025-004082-Acc0.9720.pth
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:0/156	loss:2.46308e-05	lr:4.07078e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:10/156	loss:1.51927e-05	lr:3.94081e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:20/156	loss:5.28606e-06	lr:3.81291e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:30/156	loss:9.39046e-06	lr:3.68709e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:40/156	loss:3.17536e-05	lr:3.56336e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:50/156	loss:1.54599e-06	lr:3.44173e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:60/156	loss:2.24396e-05	lr:3.3222e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:70/156	loss:2.2724e-06	lr:3.20477e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:80/156	loss:1.28102e-05	lr:3.08946e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:90/156	loss:8.24914e-05	lr:2.97626e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:100/156	loss:1.17376e-05	lr:2.86518e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:110/156	loss:4.44409e-06	lr:2.75623e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:120/156	loss:1.95229e-05	lr:2.64941e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:130/156	loss:1.68073e-05	lr:2.54473e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:140/156	loss:8.72819e-06	lr:2.44218e-05
+12-15 17:36 12-15-A1 INFO: epoch:26/30	itr:150/156	loss:8.64587e-06	lr:2.34178e-05
+12-15 17:36 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:36 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:36 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:36 12-15-A1 INFO: acc: 0.9730	auc: 0.9969
+12-15 17:36 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_026-004239-Acc0.9730.pth
+12-15 17:36 12-15-A1 INFO: epoch:27/30	itr:0/156	loss:1.44913e-06	lr:2.27278e-05
+12-15 17:36 12-15-A1 INFO: epoch:27/30	itr:10/156	loss:2.68591e-06	lr:2.17604e-05
+12-15 17:36 12-15-A1 INFO: epoch:27/30	itr:20/156	loss:1.3262e-06	lr:2.08146e-05
+12-15 17:36 12-15-A1 INFO: epoch:27/30	itr:30/156	loss:2.5965e-06	lr:1.98904e-05
+12-15 17:36 12-15-A1 INFO: epoch:27/30	itr:40/156	loss:4.00086e-06	lr:1.89878e-05
+12-15 17:36 12-15-A1 INFO: epoch:27/30	itr:50/156	loss:1.00582e-06	lr:1.81069e-05
+12-15 17:36 12-15-A1 INFO: epoch:27/30	itr:60/156	loss:3.1702e-06	lr:1.72478e-05
+12-15 17:37 12-15-A1 INFO: epoch:27/30	itr:70/156	loss:6.7686e-06	lr:1.64105e-05
+12-15 17:37 12-15-A1 INFO: epoch:27/30	itr:80/156	loss:4.46651e-06	lr:1.55949e-05
+12-15 17:37 12-15-A1 INFO: epoch:27/30	itr:90/156	loss:1.93341e-06	lr:1.48012e-05
+12-15 17:37 12-15-A1 INFO: epoch:27/30	itr:100/156	loss:6.0883e-05	lr:1.40294e-05
+12-15 17:37 12-15-A1 INFO: epoch:27/30	itr:110/156	loss:5.17803e-06	lr:1.32795e-05
+12-15 17:37 12-15-A1 INFO: epoch:27/30	itr:120/156	loss:9.94649e-07	lr:1.25516e-05
+12-15 17:37 12-15-A1 INFO: epoch:27/30	itr:130/156	loss:2.72688e-06	lr:1.18457e-05
+12-15 17:37 12-15-A1 INFO: epoch:27/30	itr:140/156	loss:3.41977e-06	lr:1.11617e-05
+12-15 17:37 12-15-A1 INFO: epoch:27/30	itr:150/156	loss:1.15807e-05	lr:1.04999e-05
+12-15 17:37 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:37 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:37 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:37 12-15-A1 INFO: acc: 0.9720	auc: 0.9970
+12-15 17:37 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_027-004396-Acc0.9720.pth
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:0/156	loss:8.57541e-06	lr:1.00497e-05
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:10/156	loss:4.62668e-06	lr:9.42539e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:20/156	loss:5.9641e-06	lr:8.8232e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:30/156	loss:0.000120376	lr:8.24317e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:40/156	loss:4.22814e-06	lr:7.68532e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:50/156	loss:2.16438e-06	lr:7.14967e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:60/156	loss:2.3231e-05	lr:6.63626e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:70/156	loss:7.69609e-06	lr:6.1451e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:80/156	loss:1.27432e-05	lr:5.67622e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:90/156	loss:5.01417e-06	lr:5.22964e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:100/156	loss:3.37881e-06	lr:4.80537e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:110/156	loss:0.000124398	lr:4.40344e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:120/156	loss:5.09982e-06	lr:4.02387e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:130/156	loss:2.37682e-05	lr:3.66666e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:140/156	loss:1.34855e-06	lr:3.33185e-06
+12-15 17:37 12-15-A1 INFO: epoch:28/30	itr:150/156	loss:5.05875e-06	lr:3.01944e-06
+12-15 17:37 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:38 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:38 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:38 12-15-A1 INFO: acc: 0.9720	auc: 0.9969
+12-15 17:38 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_028-004553-Acc0.9720.pth
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:0/156	loss:4.854e-06	lr:2.81409e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:10/156	loss:6.27436e-05	lr:2.53979e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:20/156	loss:2.04279e-05	lr:2.28794e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:30/156	loss:5.74644e-05	lr:2.05853e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:40/156	loss:5.33073e-06	lr:1.85159e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:50/156	loss:5.79262e-06	lr:1.66711e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:60/156	loss:2.31222e-05	lr:1.50511e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:70/156	loss:2.12713e-06	lr:1.3656e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:80/156	loss:1.30591e-05	lr:1.24858e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:90/156	loss:2.39414e-05	lr:1.15406e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:100/156	loss:1.44754e-05	lr:1.08204e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:110/156	loss:3.43501e-05	lr:1.03252e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:120/156	loss:0.000193417	lr:1.00551e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:130/156	loss:6.5565e-07	lr:1e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:140/156	loss:5.923e-06	lr:1e-06
+12-15 17:38 12-15-A1 INFO: epoch:29/30	itr:150/156	loss:3.99711e-06	lr:1e-06
+12-15 17:38 12-15-A1 INFO: Train finish. Start evaluating...
+12-15 17:38 12-15-A1 INFO: ===> Evaluating train dataset: n5000
+12-15 17:38 12-15-A1 INFO: acc: 1.0000	auc: 1.0000
+12-15 17:38 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 17:39 12-15-A1 INFO: acc: 0.9720	auc: 0.9970
+12-15 17:39 12-15-A1 INFO: Saving checkpoint to outputs/12-15-A1-lr0.001-bs32/model_final_029-004710-Acc0.9720.pth
+12-15 17:39 12-15-A1 INFO: ========> all finished!
+12-15 18:42 12-15-A1 INFO: ========> inference main eval...
+========> this program info
+12-15 18:43 12-15-A1 INFO: use gpu
+12-15 18:43 12-15-A1 INFO: Loading checkpoint from outputs/12-15-A1-lr0.001-bs32/model_final_029-004710-Acc0.9720.pth
+12-15 18:43 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-15 18:43 12-15-A1 INFO: acc: 0.9720	auc: 0.9970
+12-23 15:33 12-15-A1 INFO: ========> inference main eval...
+========> this program info
+12-23 15:33 12-15-A1 INFO: use gpu
+12-23 15:33 12-15-A1 INFO: Loading checkpoint from outputs/12-15-A1-lr0.001-bs32/model_final_029-004710-Acc0.9720.pth
+12-23 15:33 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-23 15:33 12-15-A1 INFO: acc: 0.9720	auc: 0.9970
+12-23 15:33 12-15-A1 INFO: ========> inference main eval...
+========> this program info
+12-23 15:34 12-15-A1 INFO: use gpu
+12-23 15:34 12-15-A1 INFO: Loading checkpoint from outputs/12-15-A1-lr0.001-bs32/model_final_029-004710-Acc0.9720.pth
+12-23 15:34 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-23 15:34 12-15-A1 INFO: acc: 0.9720	auc: 0.9970
+12-23 15:35 12-15-A1 INFO: ========> inference main eval...
+========> this program info
+12-23 15:35 12-15-A1 INFO: use gpu
+12-23 15:35 12-15-A1 INFO: Loading checkpoint from outputs/12-15-A1-lr0.001-bs32/model_final_029-004710-Acc0.9720.pth
+12-23 15:35 12-15-A1 INFO: ===> Evaluating test dataset: n1000
+12-23 15:35 12-15-A1 INFO: acc: 0.9720	auc: 0.9970
