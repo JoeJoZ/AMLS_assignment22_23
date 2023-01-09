@@ -39,3 +39,5 @@ Because the models in output file is too big, I up load the model to Google Driv
 https://drive.google.com/file/d/1wRXSYoI_YwxsR8nYiXmBBvoFGYvNbrqs/view?usp=sharing  This model should been put into 'outputs''12-15-A1-lr0.001-bs32'
 
 https://drive.google.com/file/d/1mlAdcMZ-a9Y5KLcVygOBnk4aYpd1UrN1/view?usp=sharing  This model should been put into 'outputs''12-23-A2-atten1-lr0.001-bs32'
+
+Or you can download the full model https://drive.google.com/drive/folders/1Da46xduisYRaehlj9jLUC_HB4nnZXvAF?usp=sharing
