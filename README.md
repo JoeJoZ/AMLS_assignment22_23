@@ -31,3 +31,5 @@ The folder **utils** contains some utility classes. For example, for saving chec
 The folder **outputs** is used to save the trained model files.
 
 **shape_predictor_68_face_landmarks.dat** is the pre-trained face landmark extractor required for task A2.
+
+Datasets must be placed in the **Datasets** folder in the root directory as required
