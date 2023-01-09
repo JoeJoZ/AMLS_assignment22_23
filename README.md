@@ -1,4 +1,4 @@
-AMLS_assignment
+# AMLS_assignment
 
 In this project, four distinct challenging scopes are addressed under the supervised machine learning paradigm. They comprise binary classification tasks for gender (A1) and smile detection (A2) along with multi-categorical classification tasks concerning eye-colour (B2) and face-shape (B1) recognition.
 
