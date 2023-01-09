@@ -27,7 +27,9 @@ def do_evaluation(internal_model, internal_split):
     total_results = np.empty(shape=[0])
     total_probs = np.empty(shape=[0])
     total_labels = np.empty(shape=[0])
-    for sample_batched in tqdm(data_loader_val):  # 遍历整个数据集中多个 batch
+    
+    # test
+    for sample_batched in tqdm(data_loader_val):  
         images, labels = sample_batched['image'], sample_batched['label']
         with torch.no_grad():
             outputs = internal_model(images.to(internal_device))
@@ -38,7 +40,8 @@ def do_evaluation(internal_model, internal_split):
         total_results = np.concatenate((total_results, results), axis=0)
         total_probs = np.concatenate((total_probs, probs), axis=0)
         total_labels = np.concatenate((total_labels, labels), axis=0)
-
+    
+    # Calculate the performance
     correct_test = (total_results == total_labels).sum().item()
     acc = float(correct_test) / float(len(total_labels))
     auc = roc_auc_score(y_true=total_labels, y_score=total_probs)
@@ -51,7 +54,7 @@ def do_evaluation(internal_model, internal_split):
 
 
 if __name__ == "__main__":
-    # gpu id 0 1 2 3
+    # init config
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
     print("inference main eval...")

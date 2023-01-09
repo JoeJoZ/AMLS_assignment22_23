@@ -21,10 +21,12 @@ def read_data(data_dir):
     X = []
     Y = []
 
+    # load labels
     df = pd.read_csv(os.path.join(data_dir, 'labels.csv'), sep='\t')
     img_list = df['file_name'].values.tolist()
     label_list = df['face_shape'].values.tolist()
 
+    # load images
     for i in range(len(img_list)):
         image = cv2.imread(os.path.join(data_dir, 'img', img_list[i]), 0)
         x_mid = image.shape[0] // 2
@@ -39,16 +41,22 @@ def read_data(data_dir):
     return X, Y
 
 if __name__ == "__main__":
+    # load data and extract hog features 
     X_train, Y_train = read_data('Datasets/cartoon_set')
     X_train = extract_hog_features(X_train)
     print('load train data')
     X_test, Y_test = read_data('Datasets/cartoon_set_test')
     X_test = extract_hog_features(X_test)
     print('load test data')
-    model = svm.SVC(C=1.0, kernel='rbf', decision_function_shape='ovr')
-    model.fit(X_train, Y_train)
 
+    # model
+    model = svm.SVC(C=1.0, kernel='rbf', decision_function_shape='ovr')
+    # train
+    model.fit(X_train, Y_train)
+    
+    # test
     Y_predict_train = model.predict(X_train)
+    # Calculate the performance
     acc_train = accuracy_score(Y_train, Y_predict_train)
 
     Y_predict_test = model.predict(X_test)

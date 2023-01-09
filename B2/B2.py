@@ -9,11 +9,13 @@ from sklearn.ensemble import RandomForestClassifier
 def read_data(data_dir):
     X = []
     Y = []
-
+    
+    # load labels
     df = pd.read_csv(os.path.join(data_dir, 'labels.csv'), sep='\t')
     img_list = df['file_name'].values.tolist()
     label_list = df['eye_color'].values.tolist()
-
+    
+    # load images
     for i in range(len(img_list)):
         image = cv2.imread(os.path.join(data_dir, 'img', img_list[i]))
         image = image[220:300, 160:240]
@@ -26,14 +28,18 @@ def read_data(data_dir):
 
 
 if __name__ == "__main__":
+    # load data
     X_train, Y_train = read_data('Datasets/cartoon_set')
     X_test, Y_test = read_data('Datasets/cartoon_set_test')
 
+    # model
     model = RandomForestClassifier(n_estimators=100)
+    # trian
     model.fit(X_train, Y_train)
-    Y_predict = model.predict(X_test)
-
+    
+    # test
     Y_predict_train = model.predict(X_train)
+    # Calculate the performance
     acc_train = accuracy_score(Y_train, Y_predict_train)
 
     Y_predict_test = model.predict(X_test)
