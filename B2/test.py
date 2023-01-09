@@ -48,6 +48,6 @@ if __name__ == "__main__":
 
     plt.xlabel("Training examples")
     plt.ylabel("Loss")
-    # 显示图例
+    # Show the graph
     plt.legend(loc="best")
     plt.show()
