@@ -45,6 +45,6 @@ if __name__ == '__main__':
     cfg = Config
     dataset = FaceDataset(cfg, split='test')
     data_loader = DataLoader(dataset, cfg.batch_size, num_workers=cfg.num_works, shuffle=True)
-    for sample_batched in tqdm(data_loader):  # 遍历整个数据集中多个 batch
+    for sample_batched in tqdm(data_loader):  # Iterate over multiple batches in the entire dataset
         images, labels = sample_batched['image'], sample_batched['label']
         print(labels)
