@@ -32,7 +32,7 @@ def path_init(cfg):
 
 
 def cfg_merge_with_args(cfg, args):
-    opt = vars(args)  # args NameSpace 转 dict
+    opt = vars(args)  # args NameSpace to dict
     if 'lr' in opt.keys():
         if args.lr is not None:
             cfg.lr = args.lr
