@@ -70,7 +70,7 @@ def main():
 
     # checkpoint
     arguments = {"epoch": 0, "batch_size": cfg.batch_size,
-                 "global_step": 0}  # 超参初始化
+                 "global_step": 0}  # initialization
 
     # load finetune model
     check_pointer = CheckPointer(
