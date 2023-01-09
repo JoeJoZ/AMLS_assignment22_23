@@ -33,3 +33,6 @@ The folder **outputs** is used to save the trained model files.
 **shape_predictor_68_face_landmarks.dat** is the pre-trained face landmark extractor required for task A2.
 
 Datasets must be placed in the **Datasets** folder in the root directory as required
+Because the models in output file is too big, I up load the model to Google Drive. Please down load these models and put them into correct files.
+https://drive.google.com/file/d/1wRXSYoI_YwxsR8nYiXmBBvoFGYvNbrqs/view?usp=sharing  This model should been put into 'outputs''12-15-A1-lr0.001-bs32'
+https://drive.google.com/file/d/1mlAdcMZ-a9Y5KLcVygOBnk4aYpd1UrN1/view?usp=sharing  This model should been put into 'outputs''12-23-A2-atten1-lr0.001-bs32'
